@@ -1,0 +1,5 @@
+java11-openj9 -XX:+HeapDumpOnOutOfMemoryError -jar target/benchmarks.jar Backtracking -jvmArgs "-Xms5g -Xmx5g -XX:+HeapDumpOnOutOfMemoryError -Xgcpolicy:nogc -Xshareclasses:nonpersistent,verboseAOT,reset" -rf json -rff jmh-result-openj9-backtracking-sudoku.json -i 21000 -f 20 -to 360m | tee output-openj9-backtracking-sudoku-$(date +'%FT%H-%M').log
+
+
+reset works.... every jvm (every fork?) stores new AOT compiled code
+

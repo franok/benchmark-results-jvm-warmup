@@ -1,0 +1,4 @@
+java11-openj9 -XX:+HeapDumpOnOutOfMemoryError -Xshareclasses:reset -jar target/benchmarks.jar Backtracking -jvmArgs "-Xms5g -Xmx5g -XX:+HeapDumpOnOutOfMemoryError -Xgcpolicy:nogc -Xshareclasses:nonpersistent,verboseAOT" -rf json -rff jmh-result-openj9-backtracking-sudoku.json -i 21000 -f 20 -to 360m | tee output-openj9-backtracking-sudoku-$(date +'%FT%H-%M').log
+
+
+did not reset aot cache
